@@ -1,5 +1,6 @@
 package SunWongParis13.Piece;
 
+
 public class PieceRoi extends Piece{
 
 	public PieceRoi(boolean couleur, int ligne, int colonne){
