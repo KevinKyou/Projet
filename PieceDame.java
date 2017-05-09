@@ -1,5 +1,6 @@
 package SunWongParis13.Piece;
 
+
 public class PieceDame extends Piece{
 	
 	public PieceDame(boolean couleur, int ligne, int colonne){
