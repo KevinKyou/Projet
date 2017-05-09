@@ -1,5 +1,6 @@
 package SunWongParis13.Echiquier;
 
+
 import SunWongParis13.Piece.*;
 
 public class Case {
