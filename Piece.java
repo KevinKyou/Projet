@@ -10,7 +10,7 @@ public abstract class Piece {
 	
 	/**
 	 * 
-	 * Constructeur champ à champ
+	 * Constructeur champ Ã  champ
 	 * @param nomPiece : Nom de la piece
 	 * @param l : Ligne de la piece
 	 * @param c : Colonne de la piece
@@ -27,7 +27,7 @@ public abstract class Piece {
 	/**
 	 * 
 	 * Constructeur par copie
-	 * @param p : Piece à copier
+	 * @param p : Piece Ã  copier
 	 */
 	public Piece(Piece p){
 		this.setNom(new String(p.getNom()));
@@ -71,7 +71,7 @@ public abstract class Piece {
 	
 	/**
 	 * 
-	 * @return Si la piece s'est déplacée
+	 * @return Si la piece s'est dÃ©placÃ©e
 	 */
 	public int getMouvement(){
 		return this.mouvement;
@@ -110,7 +110,7 @@ public abstract class Piece {
 	}
 	
 	/**
-	 * La piece a bougé
+	 * La piece a bougÃ©
 	 */
 	public void setMouvement(){
 		this.mouvement = (this.getMouvement()+1);
@@ -123,29 +123,6 @@ public abstract class Piece {
 	 * @return Verifie la piece concerne peut faire ce deplacement
 	 */
 	public abstract boolean deplacementValide(int l, int c);
-	
-	/**
-	 * 
-	 * @param l : Ligne de la piece
-	 * @param c : Colonne de la piece
-	 * @return Verifie si il y a eu un mouvement
-	 */
-	public boolean mouvementIdentique(int l, int c){
-		return this.getLigne()==l && this.getColonne()==c;
-	}
-	
-	/**
-	 * Verifie si la piece peut se deplacer, si elle bouge, si elle est dans la piece
-	 * @param l : Ligne de la piece
-	 * @param c : Colonne de la piece
-	 */
-	public void mouvementPiece(int l, int c){
-		if(deplacementValide(l,c) && !mouvementIdentique(l,c)){
-			this.setLigne(l);
-			this.setColonne(c);
-			this.setMouvement();
-		}
-	}
 
 	/**
 	 * On affiche le nom de la piece + la couleur de la piece
