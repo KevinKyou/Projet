@@ -2,38 +2,31 @@ package SunWongParis13.Piece;
 
 public class PieceFou extends Piece{
 	
+	/**
+	 * Constructeur du Fou
+	 * @param couleur : Couleur du Fou
+	 * @param ligne : Ligne de la grille
+	 * @param colonne : Colonne de la grille
+	 */
 	public PieceFou(boolean couleur, int ligne, int colonne){
-		super(Piece.FOU, couleur, ligne, colonne);
-	}
-
-	public boolean mouvementFou(int l, int c){
-		if(deplacementValide(l,c) && mouvementValide(l,c) && !(mouvementIdentique(l,c)))
-			return true;
-		return false;
+		super(Piece_nom_constantes.FOU, couleur, ligne, colonne);
 	}
 	
+	/**
+	 * Deplacement Diagonale
+	 * @param l : Ligne de la piece
+	 * @param c : Colonne de la piece
+	 * @return Verifie si le fou se deplace en diagonale
+	 */	
 	public boolean deplacementValide(int l, int c){
-		if(this.getLigne()>l && this.getColonne()>c){ //hg
+		if(this.getLigne()>l && this.getColonne()>c)
 			return (this.getLigne() - l) == (this.getColonne() - c);
-		}
-		else if(this.getLigne()>l && this.getColonne()<c){ //hd
+		else if(this.getLigne()>l && this.getColonne()<c)
 			return (this.getLigne() - l) == (c - this.getColonne());
-		}
-		else if(this.getLigne()<l && this.getColonne()>c){ //bg
+		else if(this.getLigne()<l && this.getColonne()>c)
 			return (l - this.getLigne()) == (this.getColonne() - c);
-		}
-		else if(this.getLigne()<l && this.getColonne()<c){ //bd
+		else if(this.getLigne()<l && this.getColonne()<c)
 			return (l - this.getLigne()) == (c - this.getColonne());
-		}
 		return false;
-	}
-	
-	public static void main(String [] args){
-		PieceFou f = new PieceFou(true, 5, 3);
-		if(f.deplacementValide(7,1))
-			System.out.println("bingo");
-		else
-			System.out.println("bango");
-	}
-	
+	}	
 }
