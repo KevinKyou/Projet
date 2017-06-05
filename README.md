@@ -1,2 +1,0 @@
-# Projet
-PROJET JAVA : JEU D'ECHEC
